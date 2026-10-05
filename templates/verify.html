@@ -1,0 +1,666 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>TrustTrail | Verify Product</title>
+
+    <link rel="stylesheet"
+          href="/static/style.css">
+
+</head>
+
+
+<body>
+
+<div class="app-shell">
+
+
+    <!-- =====================================================
+         NAVBAR
+         ===================================================== -->
+
+    <header class="navbar">
+
+        <div class="navbar-inner">
+
+            <a href="/" class="logo">
+
+                <div class="logo-mark">
+                    🏔️
+                </div>
+
+                <div>
+
+                    <p class="logo-name">
+                        TrustTrail
+                    </p>
+
+                    <p class="logo-tagline">
+                        Product origin verification
+                    </p>
+
+                </div>
+
+            </a>
+
+
+            <div class="nav-status">
+
+                <span class="status-dot"></span>
+
+                LIVE DEMO
+
+            </div>
+
+        </div>
+
+    </header>
+
+
+
+    <!-- =====================================================
+         MAIN
+         ===================================================== -->
+
+    <main class="page-background verification-page">
+
+
+        {% if batch %}
+
+        <div class="container">
+
+            <div class="verification-wrapper">
+
+
+                <!-- =================================================
+                     VERIFIED HEADER
+                     ================================================= -->
+
+                <div class="verified-banner">
+
+                    <div class="verified-check">
+                        ✓
+                    </div>
+
+
+                    <div>
+
+                        <span class="eyebrow">
+                            TRUSTTRAIL VERIFICATION
+                        </span>
+
+
+                        <h2>
+                            Product Verified
+                        </h2>
+
+
+                        <p>
+                            This product is registered in the
+                            TrustTrail system.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- =================================================
+                     PRODUCT SUMMARY
+                     ================================================= -->
+
+                <div class="product-summary">
+
+
+                    <div class="product-image">
+
+                        🍯
+
+                    </div>
+
+
+                    <div>
+
+                        <span class="verification-label">
+                            VERIFIED PRODUCT
+                        </span>
+
+
+                        <h1>
+                            {{ batch["product_name"] }}
+                        </h1>
+
+
+                        <p>
+                            Batch TT-{{ batch["id"] }}
+                        </p>
+
+                    </div>
+
+
+                </div>
+
+
+
+                <!-- =================================================
+                     TRUST SCORE / CHECKS
+                     ================================================= -->
+
+                <div class="trust-box">
+
+
+                    <div class="trust-circle">
+                        ✓
+                    </div>
+
+
+                    <div>
+
+                        <span class="verification-label">
+                            TRUST STATUS
+                        </span>
+
+
+                        <h3>
+                            Authenticity record found
+                        </h3>
+
+
+                        <div class="trust-checks">
+
+                            <span>
+                                ✓ Registered producer
+                            </span>
+
+                            <span>
+                                ✓ Registered product batch
+                            </span>
+
+                            <span>
+                                ✓ Origin information available
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+
+
+                <!-- =================================================
+                     PRODUCT INFORMATION
+                     ================================================= -->
+
+                <section class="section">
+
+
+                    <div class="section-heading">
+
+                        <span class="eyebrow">
+                            PRODUCT DETAILS
+                        </span>
+
+
+                        <h2>
+                            Know what you're buying
+                        </h2>
+
+
+                        <p>
+                            The information below comes from the
+                            registered TrustTrail batch.
+                        </p>
+
+                    </div>
+
+
+
+                    <div class="info-grid">
+
+
+                        <div class="info-box">
+
+                            <div class="info-icon">
+                                📦
+                            </div>
+
+
+                            <span class="verification-label">
+                                PRODUCT
+                            </span>
+
+
+                            <strong>
+                                {{ batch["product_name"] }}
+                            </strong>
+
+                        </div>
+
+
+
+                        <div class="info-box">
+
+                            <div class="info-icon">
+                                ⚖️
+                            </div>
+
+
+                            <span class="verification-label">
+                                QUANTITY
+                            </span>
+
+
+                            <strong>
+                                {{ batch["quantity"] }}
+                            </strong>
+
+                        </div>
+
+
+
+                        <div class="info-box">
+
+                            <div class="info-icon">
+                                🧑‍🌾
+                            </div>
+
+
+                            <span class="verification-label">
+                                PRODUCER
+                            </span>
+
+
+                            <strong>
+                                {{ batch["producer_name"] }}
+                            </strong>
+
+                        </div>
+
+
+
+                        <div class="info-box">
+
+                            <div class="info-icon">
+                                📞
+                            </div>
+
+
+                            <span class="verification-label">
+                                CONTACT
+                            </span>
+
+
+                            <strong>
+                                {{ batch["producer_phone"] }}
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+
+                </section>
+
+
+
+                <!-- =================================================
+                     ORIGIN
+                     ================================================= -->
+
+                <section class="origin-card">
+
+
+                    <div>
+
+                        <span class="eyebrow">
+                            PRODUCT ORIGIN
+                        </span>
+
+
+                        <h2>
+                            {{ batch["origin"] }}
+                        </h2>
+
+
+                        <p>
+                            Registered producer location:
+                            {{ batch["producer_location"] }}
+                        </p>
+
+                    </div>
+
+
+                    <div class="origin-card-map">
+
+                        📍
+
+                        <span>
+                            Verified Origin
+                        </span>
+
+                    </div>
+
+
+                </section>
+
+
+
+                <!-- =================================================
+                     JOURNEY
+                     ================================================= -->
+
+                <section class="journey-card">
+
+
+                    <div class="section-heading">
+
+                        <span class="eyebrow">
+                            PRODUCT JOURNEY
+                        </span>
+
+
+                        <h2>
+                            From producer to buyer
+                        </h2>
+
+
+                        <p>
+                            Follow the registered journey of this
+                            product batch.
+                        </p>
+
+                    </div>
+
+
+
+                    <div class="journey-line">
+
+
+                        <div class="journey-step">
+
+                            <div class="journey-dot">
+                                ✓
+                            </div>
+
+
+                            <div>
+
+                                <strong>
+                                    Product registered
+                                </strong>
+
+                                <p>
+                                    Producer created the batch
+                                    in TrustTrail.
+                                </p>
+
+                            </div>
+
+                        </div>
+
+
+
+                        <div class="journey-step">
+
+                            <div class="journey-dot">
+                                ✓
+                            </div>
+
+
+                            <div>
+
+                                <strong>
+                                    QR verification created
+                                </strong>
+
+                                <p>
+                                    A unique verification identity
+                                    was generated for this batch.
+                                </p>
+
+                            </div>
+
+                        </div>
+
+
+
+                        <div class="journey-step">
+
+                            <div class="journey-dot">
+                                ✓
+                            </div>
+
+
+                            <div>
+
+                                <strong>
+                                    Buyer verification
+                                </strong>
+
+                                <p>
+                                    Scan the QR to verify the
+                                    product information.
+                                </p>
+
+                            </div>
+
+                        </div>
+
+
+                    </div>
+
+
+                </section>
+
+
+
+                <!-- =================================================
+                     PAYMENT
+                     ================================================= -->
+
+                <section class="payment-card">
+
+
+                    <div>
+
+                        <span class="eyebrow">
+                            PRODUCER PAYOUT
+                        </span>
+
+
+                        {% if batch["status"] == "PAID" %}
+
+                        <h2>
+                            Producer payment completed
+                        </h2>
+
+
+                        <p class="payment-text">
+                            The delivery has been marked complete
+                            and the producer payout is shown as paid
+                            in this prototype.
+                        </p>
+
+                        {% else %}
+
+                        <h2>
+                            Delivery & payout
+                        </h2>
+
+
+                        <p class="payment-text">
+                            In the TrustTrail prototype, delivery can
+                            be marked complete to simulate a producer
+                            payout.
+                        </p>
+
+                        {% endif %}
+
+                    </div>
+
+
+
+                    {% if batch["status"] == "PAID" %}
+
+                    <span class="paid-badge">
+                        ✓ PAID
+                    </span>
+
+                    {% else %}
+
+                    <form
+                        action="/delivery/{{ batch['id'] }}"
+                        method="post">
+
+                        <button
+                            type="submit"
+                            class="primary-button">
+
+                            Mark Delivery & Pay →
+
+                        </button>
+
+                    </form>
+
+                    {% endif %}
+
+
+                </section>
+
+
+
+                <!-- =================================================
+                     TRUST MESSAGE
+                     ================================================= -->
+
+                <div class="trust-message">
+
+                    <strong>
+                        🛡️ TrustTrail
+                    </strong>
+
+
+                    <p>
+                        Verify the origin. Know the producer.
+                        Follow the journey.
+                    </p>
+
+                </div>
+
+
+
+                <!-- =================================================
+                     BACK ACTION
+                     ================================================= -->
+
+                <div class="action-row">
+
+                    <a
+                        href="/"
+                        class="secondary-button">
+
+                        ← Back to TrustTrail
+
+                    </a>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+
+        {% else %}
+
+
+        <!-- =================================================
+             NOT FOUND
+             ================================================= -->
+
+        <div class="container">
+
+            <div class="verification-wrapper">
+
+                <div class="form-card not-found">
+
+
+                    <div class="success-icon">
+                        !
+                    </div>
+
+
+                    <span class="eyebrow">
+                        VERIFICATION
+                    </span>
+
+
+                    <h2>
+                        Product Not Found
+                    </h2>
+
+
+                    <p>
+                        We could not find a TrustTrail batch with
+                        this verification ID.
+                    </p>
+
+
+                    <div class="action-row">
+
+                        <a
+                            href="/"
+                            class="primary-button">
+
+                            Back to TrustTrail →
+
+                        </a>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+        </div>
+
+        {% endif %}
+
+
+
+        <!-- =================================================
+             FOOTER
+             ================================================= -->
+
+        <footer class="site-footer">
+
+            <strong>
+                🏔️ TrustTrail
+            </strong>
+
+            · Product origin verification
+
+            <small>
+                FastAPI + SQLite Prototype · Hackathon Demo
+            </small>
+
+        </footer>
+
+
+    </main>
+
+</div>
+
+</body>
+
+</html>

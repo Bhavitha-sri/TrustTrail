@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>TrustTrail | Register Product Batch</title>
+
+    <link rel="stylesheet"
+          href="/static/style.css">
+
+</head>
+
+
+<body>
+
+<div class="app-shell">
+
+
+    <!-- =====================================================
+         NAVBAR
+         ===================================================== -->
+
+    <header class="navbar">
+
+        <div class="navbar-inner">
+
+            <a href="/" class="logo">
+
+                <div class="logo-mark">
+                    🏔️
+                </div>
+
+                <div>
+
+                    <p class="logo-name">
+                        TrustTrail
+                    </p>
+
+                    <p class="logo-tagline">
+                        Product origin verification
+                    </p>
+
+                </div>
+
+            </a>
+
+
+            <div class="nav-status">
+
+                <span class="status-dot"></span>
+
+                LIVE DEMO
+
+            </div>
+
+        </div>
+
+    </header>
+
+
+
+    <!-- =====================================================
+         MAIN
+         ===================================================== -->
+
+    <main class="page-background">
+
+
+        <section class="form-page">
+
+            <div class="container">
+
+                <div class="form-wrapper">
+
+
+                    <!-- BACK -->
+
+                    <a
+                        href="/producer"
+                        class="page-back">
+
+                        ← Back to Producer Registration
+
+                    </a>
+
+
+
+                    <!-- FORM CARD -->
+
+                    <div class="form-card">
+
+
+                        <div class="form-header">
+
+                            <span class="eyebrow">
+                                STEP 02
+                            </span>
+
+
+                            <h2>
+                                Register Product Batch
+                            </h2>
+
+
+                            <p>
+                                Create a unique product batch and
+                                generate its TrustTrail verification QR.
+                            </p>
+
+                        </div>
+
+
+
+                        <!-- PRODUCER SUMMARY -->
+
+                        {% if producer %}
+
+                        <div class="batch-summary">
+
+
+                            <div class="summary-item">
+
+                                <span class="summary-label">
+                                    PRODUCER
+                                </span>
+
+                                <span class="summary-value">
+                                    {{ producer["name"] }}
+                                </span>
+
+                            </div>
+
+
+                            <div class="summary-item">
+
+                                <span class="summary-label">
+                                    PHONE
+                                </span>
+
+                                <span class="summary-value">
+                                    {{ producer["phone"] }}
+                                </span>
+
+                            </div>
+
+
+                            <div class="summary-item">
+
+                                <span class="summary-label">
+                                    LOCATION
+                                </span>
+
+                                <span class="summary-value">
+                                    {{ producer["location"] }}
+                                </span>
+
+                            </div>
+
+
+                        </div>
+
+                        {% endif %}
+
+
+
+                        <!-- FORM -->
+
+                        <form
+                            action="/batch/create"
+                            method="post">
+
+
+                            <input
+                                type="hidden"
+                                name="producer_id"
+                                value="{{ producer['id'] }}"
+                            >
+
+
+
+                            <!-- PRODUCT NAME -->
+
+                            <div class="form-group">
+
+                                <label for="product_name">
+                                    Product Name
+                                </label>
+
+
+                                <input
+                                    id="product_name"
+                                    name="product_name"
+                                    type="text"
+                                    placeholder="Example: Himalayan Honey"
+                                    required
+                                >
+
+
+                                <div class="form-help">
+                                    Enter the name of the product
+                                    being registered.
+                                </div>
+
+                            </div>
+
+
+
+                            <!-- QUANTITY -->
+
+                            <div class="form-group">
+
+                                <label for="quantity">
+                                    Quantity
+                                </label>
+
+
+                                <input
+                                    id="quantity"
+                                    name="quantity"
+                                    type="text"
+                                    placeholder="Example: 50 kg"
+                                    required
+                                >
+
+
+                                <div class="form-help">
+                                    Enter the batch quantity and unit.
+                                </div>
+
+                            </div>
+
+
+
+                            <!-- ORIGIN -->
+
+                            <div class="form-group">
+
+                                <label for="origin">
+                                    Product Origin
+                                </label>
+
+
+                                <input
+                                    id="origin"
+                                    name="origin"
+                                    type="text"
+                                    placeholder="Example: Kashmir, India"
+                                    required
+                                >
+
+
+                                <div class="form-help">
+                                    This location will be shown on
+                                    the buyer verification page.
+                                </div>
+
+                            </div>
+
+
+
+                            <!-- DESCRIPTION -->
+
+                            <div class="form-group">
+
+                                <label for="description">
+                                    Product Description
+                                </label>
+
+
+                                <textarea
+                                    id="description"
+                                    name="description"
+                                    rows="5"
+                                    placeholder="Describe the product, farming method, harvest details or other useful information..."
+                                ></textarea>
+
+
+                                <div class="form-help">
+                                    Optional. Add a short story or
+                                    additional information about this batch.
+                                </div>
+
+                            </div>
+
+
+
+                            <!-- SUBMIT -->
+
+                            <div class="form-submit">
+
+                                <button
+                                    type="submit"
+                                    class="form-button">
+
+                                    Generate TrustTrail QR →
+
+                                </button>
+
+                            </div>
+
+
+                        </form>
+
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             FOOTER
+             ================================================= -->
+
+        <footer class="site-footer">
+
+            <strong>
+                🏔️ TrustTrail
+            </strong>
+
+            · Product origin verification
+
+            <small>
+                FastAPI + SQLite Prototype · Hackathon Demo
+            </small>
+
+        </footer>
+
+
+    </main>
+
+</div>
+
+</body>
+
+</html>

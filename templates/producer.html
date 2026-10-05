@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>TrustTrail | Producer Registration</title>
+
+    <link rel="stylesheet"
+          href="/static/style.css">
+
+</head>
+
+
+<body>
+
+<div class="app-shell">
+
+
+    <!-- =====================================================
+         NAVBAR
+         ===================================================== -->
+
+    <header class="navbar">
+
+        <div class="navbar-inner">
+
+            <a href="/" class="logo">
+
+                <div class="logo-mark">
+                    🏔️
+                </div>
+
+                <div>
+
+                    <p class="logo-name">
+                        TrustTrail
+                    </p>
+
+                    <p class="logo-tagline">
+                        Product origin verification
+                    </p>
+
+                </div>
+
+            </a>
+
+
+            <div class="nav-status">
+
+                <span class="status-dot"></span>
+
+                LIVE DEMO
+
+            </div>
+
+        </div>
+
+    </header>
+
+
+
+    <!-- =====================================================
+         MAIN
+         ===================================================== -->
+
+    <main class="page-background">
+
+
+        <section class="form-page">
+
+            <div class="container">
+
+                <div class="form-wrapper">
+
+
+                    <!-- BACK -->
+
+                    <a
+                        href="/"
+                        class="page-back">
+
+                        ← Back to TrustTrail
+
+                    </a>
+
+
+
+                    <!-- FORM CARD -->
+
+                    <div class="form-card">
+
+
+                        <div class="form-header">
+
+                            <span class="eyebrow">
+                                STEP 01
+                            </span>
+
+
+                            <h2>
+                                Register Producer
+                            </h2>
+
+
+                            <p>
+                                Enter producer details to create the
+                                producer record connected to product batches.
+                            </p>
+
+                        </div>
+
+
+
+                        <form
+                            action="/producer/create"
+                            method="post">
+
+
+                            <!-- PRODUCER NAME -->
+
+                            <div class="form-group">
+
+                                <label for="name">
+                                    Producer Name
+                                </label>
+
+
+                                <input
+                                    id="name"
+                                    name="name"
+                                    type="text"
+                                    placeholder="Enter producer name"
+                                    required
+                                >
+
+
+                                <div class="form-help">
+                                    Enter the name of the farmer,
+                                    artisan or producer.
+                                </div>
+
+                            </div>
+
+
+
+                            <!-- PHONE -->
+
+                            <div class="form-group">
+
+                                <label for="phone">
+                                    Phone Number
+                                </label>
+
+
+                                <input
+                                    id="phone"
+                                    name="phone"
+                                    type="tel"
+                                    placeholder="Enter phone number"
+                                    required
+                                >
+
+
+                                <div class="form-help">
+                                    Used as the producer contact
+                                    information for this prototype.
+                                </div>
+
+                            </div>
+
+
+
+                            <!-- LOCATION -->
+
+                            <div class="form-group">
+
+                                <label for="location">
+                                    Producer Location
+                                </label>
+
+
+                                <input
+                                    id="location"
+                                    name="location"
+                                    type="text"
+                                    placeholder="Example: Kashmir, India"
+                                    required
+                                >
+
+
+                                <div class="form-help">
+                                    Enter the place where the producer
+                                    operates.
+                                </div>
+
+                            </div>
+
+
+
+                            <!-- SUBMIT -->
+
+                            <div class="form-submit">
+
+                                <button
+                                    type="submit"
+                                    class="form-button">
+
+                                    Continue to Product Batch →
+
+                                </button>
+
+                            </div>
+
+
+                        </form>
+
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             FOOTER
+             ================================================= -->
+
+        <footer class="site-footer">
+
+            <strong>
+                🏔️ TrustTrail
+            </strong>
+
+            · Product origin verification
+
+            <small>
+                FastAPI + SQLite Prototype · Hackathon Demo
+            </small>
+
+        </footer>
+
+
+    </main>
+
+</div>
+
+</body>
+
+</html>
